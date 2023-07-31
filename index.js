@@ -31,7 +31,12 @@ app.post("/auth", function (req, res) {
   const currentTime = `${hours}:${minute}:${seconds}`;
   console.log(date);
   console.log(currentTime);
-  searchMember(fingerPrint, collections.members, currentTime, date);
+  const response = searchMember(
+    fingerPrint,
+    collections.members,
+    currentTime,
+    date
+  );
 });
 
 app.listen(serverPort, function () {
